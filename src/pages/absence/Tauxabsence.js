@@ -13,21 +13,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
-const GererPromotion = () => (
-    <MainCard title="Gestion de filieres">
+const Tauxabsence = () => (
+    <MainCard title="voir taux absence etudiant">
         <Form>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Label>Nom-Promotion</Form.Label>
+                    <Form.Label>Nom cours</Form.Label>
                     <Form.Control type="text" placeholder="Entrer nom" />
-                </Form.Group>
-                <Form.Group as={Col} controlId="formGridPassword">
-                    <Form.Label>Description</Form.Label>
-                    <Form.Control type="text" placeholder="jhon doe" />
                 </Form.Group>
             </Row>
             <Button variant="primary" type="submit">
-                Submit
+                valider
             </Button>
             <MainCard>
                 <Form>
@@ -35,8 +31,8 @@ const GererPromotion = () => (
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nom filiere</th>
-                                <th>Action</th>
+                                <th>Nom etudiant</th>
+                                <th>Taux absence</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,4 +59,4 @@ const GererPromotion = () => (
     </MainCard>
 );
 
-export default GererPromotion;
+export default Tauxabsence;

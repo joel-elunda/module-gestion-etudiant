@@ -20,7 +20,7 @@ const pages = {
             type: 'item',
             url: '/seances',
             icon: icons.LoginOutlined,
-            target: true
+            target: false
         },
         {
             id: 'presences',
@@ -28,7 +28,7 @@ const pages = {
             type: 'item',
             url: '/presences',
             icon: icons.ProfileOutlined,
-            target: true
+            target: false
         },
         {
             id: 'absences',
@@ -36,7 +36,7 @@ const pages = {
             type: 'item',
             url: '/absences',
             icon: icons.ProfileOutlined,
-            target: true
+            target: false
         },
         {
             id: 'reinscriptions',
@@ -44,7 +44,7 @@ const pages = {
             type: 'item',
             url: '/reinscriptions',
             icon: icons.ProfileOutlined,
-            target: true
+            target: false
         }
     ]
 };
