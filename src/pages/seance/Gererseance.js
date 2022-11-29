@@ -13,21 +13,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
-const GererPromotion = () => (
+const Gererseance = () => (
     <MainCard title="Gestion de filieres">
         <Form>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Label>Nom-Promotion</Form.Label>
-                    <Form.Control type="text" placeholder="Entrer nom" />
+                    <Form.Label>Intitule-cours</Form.Label>
+                    <Form.Control type="text" placeholder="Entrer nom cours" />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridPassword">
-                    <Form.Label>Description</Form.Label>
-                    <Form.Control type="text" placeholder="jhon doe" />
+                    <Form.Label>Date-seance</Form.Label>
+                    <Form.Control type="date" placeholder="22/12/2012" />
+                </Form.Group>
+                <Form.Group as={Col} controlId="formGridPassword">
+                    <Form.Label>Heure debut seance</Form.Label>
+                    <Form.Control type="time" placeholder="10h23" />
                 </Form.Group>
             </Row>
             <Button variant="primary" type="submit">
-                Submit
+                Ajouter seance
             </Button>
             <MainCard>
                 <Form>
@@ -35,7 +39,9 @@ const GererPromotion = () => (
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nom filiere</th>
+                                <th>Intitule cours</th>
+                                <th>Date bedut</th>
+                                <th>Heure</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -44,9 +50,11 @@ const GererPromotion = () => (
                                 <td>1</td>
                                 <td></td>
                                 <td></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>2</td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
@@ -63,4 +71,4 @@ const GererPromotion = () => (
     </MainCard>
 );
 
-export default GererPromotion;
+export default Gererseance;

@@ -20,7 +20,7 @@ const pages = {
             type: 'item',
             url: '/etudiants',
             icon: icons.LoginOutlined,
-            target: true
+            target: false
         }
     ]
 };
