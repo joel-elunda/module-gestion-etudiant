@@ -21,6 +21,14 @@ const pages = {
             url: '/etudiants',
             icon: icons.LoginOutlined,
             target: false
+        },
+        {
+            id: 'etudiantsliste',
+            title: 'Liste etudiant',
+            type: 'item',
+            url: '/etudiantsliste',
+            icon: icons.LoginOutlined,
+            target: false
         }
     ]
 };

@@ -20,7 +20,7 @@ const pages = {
             type: 'item',
             url: '/absences',
             icon: icons.LoginOutlined,
-            target: true
+            target: false
         }
     ]
 };
