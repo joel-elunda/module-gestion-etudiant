@@ -13,29 +13,42 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
-const Presence = () => (
-    <MainCard title="Gestion de presence">
+const Reinscription = () => (
+    <MainCard title="Reinscrire etudiant">
         <Form>
             <Table table table-striped>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nom cours</th>
-                        <th>Action</th>
+                        <th>Nom etudiant</th>
+                        <th>Filiere</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Conception web</td>
-                        <td>
-                            <Button variant="success">Marquer presence</Button>
-                        </td>
+                        <td>Randy mukenge</td>
+                        <td>Design</td>
                     </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Albert kalubi</td>
+                        <td>Genie logiciel</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Daniel Mabilo</td>
+                        <td>Reseaux</td>
+                    </tr>
+                    <td>
+                        <center>
+                            <Button variant="success">Valider</Button>
+                        </center>
+                    </td>
                 </tbody>
             </Table>
         </Form>
     </MainCard>
 );
 
-export default Presence;
+export default Reinscription;

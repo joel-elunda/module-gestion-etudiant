@@ -26,7 +26,7 @@ const AnneeAcademique = () => (
                 </Form.Group>
             </Row>
             <Button variant="primary" type="submit">
-                Submit
+                Creer
             </Button>
         </Form>
     </MainCard>

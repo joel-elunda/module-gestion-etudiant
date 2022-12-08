@@ -13,23 +13,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
-const Presence = () => (
-    <MainCard title="Gestion de presence">
+const Afficheretudiant = () => (
+    <MainCard title="voir taux absence etudiant">
         <Form>
             <Table table table-striped>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nom cours</th>
+                        <th>Matricule</th>
+                        <th>Nom</th>
+                        <th>Post-Nom</th>
+                        <th>Prenom</th>
+                        <th>Promotion</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Conception web</td>
+                        <td>16MK122</td>
+                        <td>Mukenge</td>
+                        <td>Mudibwa</td>
+                        <td>Randy</td>
+                        <td>Prepa</td>
                         <td>
-                            <Button variant="success">Marquer presence</Button>
+                            <Button variant="success">Modifier</Button>
+                            <Button variant="danger">Supprimer</Button>
                         </td>
                     </tr>
                 </tbody>
@@ -38,4 +47,4 @@ const Presence = () => (
     </MainCard>
 );
 
-export default Presence;
+export default Afficheretudiant;

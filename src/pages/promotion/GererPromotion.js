@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // ==============================|| SAMPLE PAGE ||============================== //
 
 const GererPromotion = () => (
-    <MainCard title="Gestion de filieres">
+    <MainCard title="Gestion promotion">
         <Form>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
@@ -27,33 +27,34 @@ const GererPromotion = () => (
                 </Form.Group>
             </Row>
             <Button variant="primary" type="submit">
-                Submit
+                Creer
             </Button>
             <MainCard>
                 <Form>
-                    <Table striped bordered hover size="sm">
+                    <Table table table-striped>
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nom filiere</th>
+                                <th>Promotion</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td></td>
-                                <td></td>
+                                <td>Genie logiciel</td>
+                                <td>
+                                    <Button variant="success">Modifier</Button>
+                                    <Button variant="danger">Supprimer</Button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td></td>
-                                <td></td>
+                                <td>Reseaux</td>
+                                <td>
+                                    <Button variant="success">Modifier</Button>
+                                    <Button variant="danger">Supprimer</Button>
+                                </td>
                             </tr>
                         </tbody>
                     </Table>
