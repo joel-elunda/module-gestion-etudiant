@@ -27,11 +27,11 @@ const Filiere = () => (
                 </Form.Group>
             </Row>
             <Button variant="primary" type="submit">
-                Submit
+                Creer
             </Button>
             <MainCard>
                 <Form>
-                    <Table striped bordered hover size="sm">
+                    <Table table table-striped>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -43,18 +43,12 @@ const Filiere = () => (
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td></td>
-                                <td></td>
+                                <td>Genie logiciel</td>
+                                <td>Guelore kabemba</td>
+                                <td>
+                                    <Button variant="success">Modifier</Button>
+                                    <Button variant="danger">Supprimer</Button>
+                                </td>
                             </tr>
                         </tbody>
                     </Table>

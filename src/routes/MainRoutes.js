@@ -23,6 +23,9 @@ const Gereretudiant = Loadable(lazy(() => import('pages/etudiant/Gereretudiant')
 const Gererseance = Loadable(lazy(() => import('pages/seance/Gererseance')));
 const MarquePresence = Loadable(lazy(() => import('pages/presence/MarquePresence')));
 const Tauxabsence = Loadable(lazy(() => import('pages/absence/Tauxabsence')));
+// import Tauxabsence from 'pages/absence/Tauxabsence';
+import Reinscription from 'pages/reinscription/Reinscription';
+import Afficheretudiant from 'pages/etudiant/Afficheretudiant';
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -81,6 +84,14 @@ const MainRoutes = {
         {
             path: 'absences',
             element: <Tauxabsence />
+        },
+        {
+            path: 'reinscriptions',
+            element: <Reinscription />
+        },
+        {
+            path: 'etudiantsliste',
+            element: <Afficheretudiant />
         }
     ]
 };

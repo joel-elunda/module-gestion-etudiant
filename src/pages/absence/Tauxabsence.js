@@ -27,7 +27,7 @@ const Tauxabsence = () => (
             </Button>
             <MainCard>
                 <Form>
-                    <Table striped bordered hover size="sm">
+                    <Table table table-striped>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -38,18 +38,18 @@ const Tauxabsence = () => (
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td></td>
-                                <td></td>
+                                <td>Randy mukenge</td>
+                                <td>75%</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td></td>
-                                <td></td>
+                                <td>Albert kalubi</td>
+                                <td>25%</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td></td>
-                                <td></td>
+                                <td>Daniel Mabilo</td>
+                                <td>50%</td>
                             </tr>
                         </tbody>
                     </Table>

@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // ==============================|| SAMPLE PAGE ||============================== //
 
 const Gererseance = () => (
-    <MainCard title="Gestion de filieres">
+    <MainCard title="Gestion de seances">
         <Form>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
@@ -35,33 +35,26 @@ const Gererseance = () => (
             </Button>
             <MainCard>
                 <Form>
-                    <Table striped bordered hover size="sm">
+                    <Table table table-striped>
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Intitule cours</th>
                                 <th>Date bedut</th>
-                                <th>Heure</th>
+                                <th>Heure debut seance</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td></td>
-                                <td></td>
+                                <td>Oracle</td>
+                                <td>07/11/2022</td>
+                                <td>08:00</td>
+                                <td>
+                                    <Button variant="success">Modifier</Button>
+                                    <Button variant="danger">Supprimer</Button>
+                                </td>
                             </tr>
                         </tbody>
                     </Table>
