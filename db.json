@@ -19,6 +19,7 @@
       "genre": "M",
       "domicile": "kalubwe",
       "email": "chriskk@gmail.com"
+<<<<<<< HEAD
     },
     {
       "id": 5
@@ -30,6 +31,8 @@
       "name": "Jane Doe",
       "email": "16ae001@esisalama.org",
       "id": 7
+=======
+>>>>>>> e14f353b30c9491164130efe5f7e1e3efb1f098e
     }
   ]
 }

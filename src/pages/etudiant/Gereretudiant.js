@@ -77,7 +77,7 @@ const Gereretudiant = () => {
                         <Form.Label>Prenom</Form.Label>
                         <Form.Control placeholder="jane doe" />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="fzozrmGridEmail">
+                    <Form.Group as={Col} controlId="formGridEmail">
                         <Form.Label>Genre</Form.Label>
                         <Form.Control placeholder="masculin" />
                     </Form.Group>

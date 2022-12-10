@@ -16,6 +16,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Reinscription = () => (
     <MainCard title="Reinscrire etudiant">
         <Form>
+            <div class="form-group">
+                <h4>Charger liste</h4>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" />
+            </div>
             <Table table table-striped>
                 <thead>
                     <tr>
