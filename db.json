@@ -1,0 +1,35 @@
+{
+  "etudiant": [
+    {
+      "id": 3,
+      "matricule": "16kk184",
+      "nom": "kiyumbi",
+      "postnom": "kayumba",
+      "prenom": "chris",
+      "genre": "M",
+      "domicile": "kalubwe",
+      "email": "chriskk@gmail.com"
+    },
+    {
+      "id": 4,
+      "matricule": "16kk184",
+      "nom": "chris",
+      "postnom": "kayumba",
+      "prenom": "chris",
+      "genre": "M",
+      "domicile": "kalubwe",
+      "email": "chriskk@gmail.com"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "name": "Jane Doe",
+      "email": "16ae001@esisalama.org",
+      "id": 7
+    }
+  ]
+}
