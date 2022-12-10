@@ -1,0 +1,20 @@
+{
+  "etudiant": [
+    {
+      "id": 1,
+      "matricule": "16kk189",
+      "nom": "kiyumbi",
+      "postnom": "kayumba",
+      "prenom": "christian",
+      "promotion": "l3GL"
+    },
+    {
+      "id": 2,
+      "matricule": "16kk184",
+      "nom": "kiyumbi",
+      "postnom": "kayumba",
+      "prenom": "chris",
+      "promotion": "l3GL"
+    }
+  ]
+}

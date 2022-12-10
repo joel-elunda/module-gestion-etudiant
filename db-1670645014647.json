@@ -1,0 +1,24 @@
+{
+  "etudiant": [
+    {
+      "id": 2,
+      "matricule": "16kk186",
+      "nom": "kamb",
+      "postnom": "kayij",
+      "prenom": "chris",
+      "genre": "M",
+      "domicile": "kalubwe",
+      "email": "chriskk@gmail.com"
+    },
+    {
+      "id": 3,
+      "matricule": "16kk184",
+      "nom": "kiyumbi",
+      "postnom": "kayumba",
+      "prenom": "chris",
+      "genre": "M",
+      "domicile": "kalubwe",
+      "email": "chriskk@gmail.com"
+    }
+  ]
+}

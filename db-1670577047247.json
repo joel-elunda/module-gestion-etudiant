@@ -1,0 +1,11 @@
+{
+  "etudiant": [
+    {
+      "id": 1,
+      "nom": "kiyumbi",
+      "postnom": "kayumba",
+      "prenom": "christian",
+      "lieunaissance": "lubumbashi"
+    }
+  ]
+}
