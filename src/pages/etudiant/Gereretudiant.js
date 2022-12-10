@@ -1,185 +1,156 @@
 // material-ui
-// import { Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
-// // project import
-// import MainCard from 'components/MainCard';
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
+// project import
+import MainCard from 'components/MainCard';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import React, { useEffect, useState } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
 const Gereretudiant = () => {
-    const [id, idchange] = useState('');
-    const [nom, nomchange] = useState('');
-    const [postnom, postnomchange] = useState('');
-    const [prenom, prenomchange] = useState('');
-    const [genre, genrechange] = useState('');
-    const [domicile, domicilechange] = useState('');
-    const [email, emailchange] = useState('');
-    const [datenaiss, datenaisschange] = useState('');
-    const [lieunaiss, lieunaisschange] = useState('');
-    const [role, rolechange] = useState('');
-    const [mdp, mdpchange] = useState('');
-    const [login, loginchange] = useState('');
-    const navigate = useNavigate();
-    // const [formdata, setData] = useState({
-    //     nom: '',
-    //     postnom: '',
-    //     prenom: '',
-    //     genre: '',
-    //     nom: '',
-    // });
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        fetchData();
+    }, []);
+    const fetchData = async () => {
+        await fetch('http://warren.pythonanywhere.com/api/etudiants/')
+            .then((res) => res.json())
+            .then((data) => setUsers(data))
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+    const onAdd = async (nom, postnom, prenom, genre, addresse, email, datenaiss, lieunaiss, login, role, password) => {
+        await fetch('http://warren.pythonanywhere.com/api/etudiants/', {
+            method: 'POST',
+            body: JSON.stringify({
+                nom: nom,
+                postnom: postnom,
+                prenom: prenom,
+                genre: genre,
+                adress: addresse,
+                email: email,
+                datenaiss: datenaiss,
+                lieunaiss: lieunaiss,
+                login: login,
+                role: role,
+                password: password
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        })
+            .then((res) => {
+                if (res.status !== 201) {
+                    return;
+                } else {
+                    return res.json();
+                }
+            })
+            .then((data) => {
+                setUsers((users) => [...users, data]);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
-    const handlesubmit = (e) => {
-        e.prevenDefault();
-        const etudata = { nom, postnom, prenom, genre, domicile, email, datenaiss, lieunaiss, role, mdp, login };
-        console.log(nom, postnom, prenom, genre, email, role, login);
-        // fetch('http://localhost:1000/etudiant', {
-        //     method: 'POST',
-        //     headers: { 'content-type': 'aplication/json' },
-        //     body: JSON.stringify(etudata)
-        // })
-        //     .then((res) => {
-        //         alert('enregistrement reussi');
-        //         navigate('/');
-        //     })
-        //     .catch((err) => {
-        //         console.log(err.message);
-        //     });
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+        onAdd(
+            e.target.nom.value,
+            e.target.postnom.value,
+            e.target.prenom.value,
+            e.target.genre.value,
+            e.target.addresse.value,
+            e.target.email.value,
+            e.target.datenaiss.value,
+            e.target.lieunaiss.value,
+            e.target.login.value,
+            e.target.role.value,
+            e.target.password.value
+        );
+        e.target.nom.value = '';
+        e.target.postnom.value = '';
+        e.target.prenom.value = '';
+        e.target.genre.value = '';
+        e.target.addresse.value = '';
+        e.target.email.value = '';
+        e.target.datenaiss.value = '';
+        e.target.lieunaiss.value = '';
+        e.target.login.value = '';
+        e.target.role.value = '';
+        e.target.password.value = '';
     };
 
     return (
-        <form className="container" onSubmit={(e) => handlesubmit(e)}>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <input
-                        value={nom}
-                        name="nom"
-                        onChange={(e) => nomchange(e.target.value)}
-                        type="text"
-                        class="form-control"
-                        placeholder="Nom"
-                    />
-                </div>
-                <div class="col-md-6 mb-4">
-                    <input
-                        value={postnom}
-                        name="postnom"
-                        onChange={(e) => postnomchange(e.target.value)}
-                        type="text"
-                        class="form-control"
-                        placeholder="Post-nom"
-                    />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <input
-                        value={prenom}
-                        name="nom"
-                        onChange={(e) => prenomchange(e.target.value)}
-                        type="text"
-                        class="form-control"
-                        placeholder="Prenom"
-                    />
-                </div>
-                <div class="col-md-6 mb-4">
-                    <input
-                        value={genre}
-                        name="genre"
-                        onChange={(e) => genrechange(e.target.value)}
-                        type="text"
-                        class="form-control"
-                        placeholder="Genre"
-                    />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <input
-                        value={domicile}
-                        name="domicile"
-                        onChange={(e) => domicilechange(e.target.value)}
-                        type="text"
-                        class="form-control"
-                        placeholder="Adresse domicile"
-                    />
-                </div>
-                <div class="col-md-6 mb-4">
-                    <input
-                        value={email}
-                        name="email"
-                        onChange={(e) => emailchange(e.target.value)}
-                        type="email"
-                        class="form-control"
-                        placeholder="Adresse email"
-                    />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <input
-                        value={datenaiss}
-                        name="datenaiss"
-                        onChange={(e) => datenaisschange(e.target.value)}
-                        type="date"
-                        class="form-control"
-                        placeholder="Date de naissance"
-                    />
-                </div>
-                <div class="col-md-6 mb-4">
-                    <input
-                        value={lieunaiss}
-                        name="lieunaiss"
-                        onChange={(e) => lieunaisschange(e.target.value)}
-                        type="text"
-                        class="form-control"
-                        placeholder="Lieu de naissance"
-                    />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 mb-6">
-                    <input
-                        value={role}
-                        name="role"
-                        onChange={(e) => rolechange(e.target.value)}
-                        type="text"
-                        class="form-control"
-                        placeholder="Role"
-                    />
-                </div>
-                <div class="col-md-4 mb-4">
-                    <input
-                        value={mdp}
-                        name="mdp"
-                        onChange={(e) => mdpchange(e.target.value)}
-                        type="text"
-                        class="form-control"
-                        placeholder="Mot de passe"
-                    />
-                </div>
-                <div class="col-md-4 mb-4">
-                    <input
-                        value={login}
-                        name="login"
-                        onChange={(e) => loginchange(e.target.value)}
-                        type="text"
-                        class="form-control"
-                        placeholder="Login"
-                    />
-                </div>
-            </div>
-            <button class="btn btn-primary" type="submit">
-                Enregistrer
-            </button>
-        </form>
+        <MainCard title="Gestion des etudiants">
+            <Form onSubmit={handleOnSubmit}>
+                <Row className="mb-3">
+                    <Form.Group as={Col} controlId="formGridEmail">
+                        <Form.Label>Nom</Form.Label>
+                        <Form.Control type="text" name="nom" placeholder="Name" />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridPassword">
+                        <Form.Label>Postnom</Form.Label>
+                        <Form.Control type="text" name="postnom" placeholder="Email" />
+                    </Form.Group>
+                </Row>
+                <Row className="mb-3">
+                    <Form.Group as={Col} controlId="formGridEmail">
+                        <Form.Label>Prenom</Form.Label>
+                        <Form.Control type="text" name="prenom" placeholder="jane doe" />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridEmail">
+                        <Form.Label>Genre</Form.Label>
+                        <Form.Control type="text" name="genre" placeholder="masculin" />
+                    </Form.Group>
+                </Row>
+                <Row className="mb-3">
+                    <Form.Group as={Col} controlId="formGridEmail">
+                        <Form.Label>Adresse domicile</Form.Label>
+                        <Form.Control type="text" name="addresse" placeholder="kalubwe 25" />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridEmail">
+                        <Form.Label>Adresse Email</Form.Label>
+                        <Form.Control type="text" name="email" placeholder="chris.k@gmail.com" />
+                    </Form.Group>
+                </Row>
+                <Row className="mb-3">
+                    <Form.Group as={Col} controlId="formGridEmail">
+                        <Form.Label>Date de naissance </Form.Label>
+                        <Form.Control type="date" name="datenaiss" placeholder="" />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridEmail">
+                        <Form.Label>Lieu de naissance</Form.Label>
+                        <Form.Control type="date" name="lieunaiss" placeholder="masculin" />
+                    </Form.Group>
+                </Row>
+                <Row className="mb-3">
+                    <Form.Group as={Col} controlId="formGridLogin">
+                        <Form.Label>Login</Form.Label>
+                        <Form.Control type="text" name="login" />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridRole">
+                        <Form.Label>Role</Form.Label>
+                        <Form.Control type="text" name="role" />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridMotdepasse">
+                        <Form.Label>Mot de passe</Form.Label>
+                        <Form.Control type="password" name="password" />
+                    </Form.Group>
+                </Row>
+                <Button onSubmit={handleOnSubmit} variant="primary" type="submit">
+                    Enregistrer
+                </Button>
+            </Form>
+        </MainCard>
     );
 };
 

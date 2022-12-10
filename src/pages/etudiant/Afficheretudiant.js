@@ -34,7 +34,7 @@ const Afficheretudiant = () => {
     }, []);
     const Supp = (id) => {
         if (window.confirm('voulez-vous supprimer?')) {
-            fetch('http://localhost:1000/etudiant/' + id, {
+            fetch('http://localhost:1000/etudiant' + id, {
                 method: 'DELETE'
             })
                 .then((res) => {
@@ -59,7 +59,7 @@ const Afficheretudiant = () => {
                                 <th>Post-Nom</th>
                                 <th>Prenom</th>
                                 <th>Genre</th>
-                                <th>Domicile</th>
+                                <th>Adress</th>
                                 <th>Email</th>
                                 <th>Action</th>
                             </tr>
@@ -71,10 +71,10 @@ const Afficheretudiant = () => {
                                         <td>{item.id}</td>
                                         <td>{item.matricule}</td>
                                         <td>{item.nom}</td>
-                                        <td>{item.postnom}</td>
+                                        <td>{item.post_nom}</td>
                                         <td>{item.prenom}</td>
                                         <td>{item.genre}</td>
-                                        <td>{item.domicile}</td>
+                                        <td>{item.adresse}</td>
                                         <td>{item.email}</td>
                                         <td>
                                             <a className="btn btn-success mr-2">edit</a>
