@@ -56,6 +56,48 @@
       "role": "",
       "password": "",
       "id": 7
+    },
+    {
+      "nom": "Mabilo",
+      "post_nom": "Mudibwa",
+      "prenom": "christian",
+      "genre": "masculin",
+      "adress": "Kasumbalesa",
+      "email": "dan@gmail.com",
+      "ate_naissance": "2022-12-23",
+      "lieu_naissance": "lubumbashi",
+      "login": "fvdvd",
+      "role": "llk",
+      "password": "lklklk",
+      "id": 8
+    },
+    {
+      "nom": "gloire",
+      "post_nom": "gloire",
+      "prenom": "gloire",
+      "genre": "masculin",
+      "adress": "lubumbashi",
+      "email": "agloire@gmail.com",
+      "ate_naissance": "2022-12-12",
+      "lieu_naissance": "lubumbashi",
+      "login": "",
+      "role": "",
+      "password": "",
+      "id": 9
+    },
+    {
+      "nom": "ben",
+      "post_nom": "ben",
+      "prenom": "ben",
+      "genre": "ben",
+      "adress": "Kasumbalesa",
+      "email": "christiankiyumbk@gmail.com",
+      "ate_naissance": "2022-12-16",
+      "lieu_naissance": "lubumbashi",
+      "login": "kkjkj",
+      "role": "kjkjkj",
+      "password": "kjkjkj",
+      "id": 10
     }
   ]
 }

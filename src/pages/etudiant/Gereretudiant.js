@@ -19,25 +19,25 @@ const Gereretudiant = () => {
         fetchData();
     }, []);
     const fetchData = async () => {
-        await fetch('http://warren.pythonanywhere.com/api/etudiants/')
+        await fetch('https://warren.pythonanywhere.com/api/etudiants/')
             .then((res) => res.json())
             .then((data) => setUsers(data))
             .catch((err) => {
                 console.log(err);
             });
     };
-    const onAdd = async (nom, postnom, prenom, genre, addresse, email, datenaiss, lieunaiss, login, role, password) => {
-        await fetch('http://warren.pythonanywhere.com/api/etudiants/', {
+    const onAdd = async (nom, post_nom, prenom, genre, addresse, email, date_naissance, lieu_naissance, login, role, password) => {
+        await fetch(' https://warren.pythonanywhere.com/api/etudiants/', {
             method: 'POST',
             body: JSON.stringify({
                 nom: nom,
-                postnom: postnom,
+                post_nom: post_nom,
                 prenom: prenom,
                 genre: genre,
                 adress: addresse,
                 email: email,
-                datenaiss: datenaiss,
-                lieunaiss: lieunaiss,
+                ate_naissance: date_naissance,
+                lieu_naissance: lieu_naissance,
                 login: login,
                 role: role,
                 password: password
@@ -65,25 +65,25 @@ const Gereretudiant = () => {
         e.preventDefault();
         onAdd(
             e.target.nom.value,
-            e.target.postnom.value,
+            e.target.post_nom.value,
             e.target.prenom.value,
             e.target.genre.value,
             e.target.addresse.value,
             e.target.email.value,
-            e.target.datenaiss.value,
-            e.target.lieunaiss.value,
+            e.target.date_naissance.value,
+            e.target.lieu_naissance.value,
             e.target.login.value,
             e.target.role.value,
             e.target.password.value
         );
         e.target.nom.value = '';
-        e.target.postnom.value = '';
+        e.target.post_nom.value = '';
         e.target.prenom.value = '';
         e.target.genre.value = '';
         e.target.addresse.value = '';
         e.target.email.value = '';
-        e.target.datenaiss.value = '';
-        e.target.lieunaiss.value = '';
+        e.target.date_naissance.value = '';
+        e.target.lieu_naissance.value = '';
         e.target.login.value = '';
         e.target.role.value = '';
         e.target.password.value = '';
@@ -93,27 +93,27 @@ const Gereretudiant = () => {
         <MainCard title="Gestion des etudiants">
             <Form onSubmit={handleOnSubmit}>
                 <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Group as={Col} controlId="formGridnom">
                         <Form.Label>Nom</Form.Label>
                         <Form.Control type="text" name="nom" placeholder="Name" />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="formGridPassword">
+                    <Form.Group as={Col} controlId="formGridPostnom">
                         <Form.Label>Postnom</Form.Label>
-                        <Form.Control type="text" name="postnom" placeholder="Email" />
+                        <Form.Control type="text" name="post_nom" placeholder="Email" />
                     </Form.Group>
                 </Row>
                 <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Group as={Col} controlId="formGridprenom">
                         <Form.Label>Prenom</Form.Label>
                         <Form.Control type="text" name="prenom" placeholder="jane doe" />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Group as={Col} controlId="formGridgenre">
                         <Form.Label>Genre</Form.Label>
                         <Form.Control type="text" name="genre" placeholder="masculin" />
                     </Form.Group>
                 </Row>
                 <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Group as={Col} controlId="formGridadresse">
                         <Form.Label>Adresse domicile</Form.Label>
                         <Form.Control type="text" name="addresse" placeholder="kalubwe 25" />
                     </Form.Group>
@@ -123,13 +123,13 @@ const Gereretudiant = () => {
                     </Form.Group>
                 </Row>
                 <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Group as={Col} controlId="formGriddatenaissance">
                         <Form.Label>Date de naissance </Form.Label>
-                        <Form.Control type="date" name="datenaiss" placeholder="" />
+                        <Form.Control type="date" name="date_naissance" placeholder="" />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Group as={Col} controlId="formGrilieunaiss">
                         <Form.Label>Lieu de naissance</Form.Label>
-                        <Form.Control type="date" name="lieunaiss" placeholder="masculin" />
+                        <Form.Control type="text" name="lieu_naissance" placeholder="masculin" />
                     </Form.Group>
                 </Row>
                 <Row className="mb-3">

@@ -1,0 +1,39 @@
+{
+  "filiere": [
+    {
+      "id": 1,
+      "filiere": "genie log",
+      "description": "filiere genie log"
+    },
+    {
+      "filiere": "design",
+      "description": "filier design",
+      "id": 2
+    },
+    {
+      "filiere": "kjkj",
+      "description": "lklkn",
+      "id": 3
+    },
+    {
+      "filiere": "",
+      "description": "",
+      "id": 4
+    },
+    {
+      "filiere": "www",
+      "description": "",
+      "id": 5
+    },
+    {
+      "filiere": "",
+      "description": "",
+      "id": 6
+    },
+    {
+      "filiere": "",
+      "description": "",
+      "id": 7
+    }
+  ]
+}
