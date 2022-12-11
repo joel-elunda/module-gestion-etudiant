@@ -18,8 +18,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 // ==============================|| SAMPLE PAGE ||============================== //
 
-const Afficheretudiant = () => {
-    const [etudata, etudatachange] = useState(null);
+const Afficheretudiant = ({ id }) => {
+    const [etudata, etudatachange] = useState([]);
+
     useEffect(() => {
         fetch('https://warren.pythonanywhere.com/api/etudiants/')
             .then((res) => {
@@ -32,9 +33,10 @@ const Afficheretudiant = () => {
                 console.log(err.message);
             });
     }, []);
+
     const Supp = (id) => {
         if (window.confirm('voulez-vous supprimer?')) {
-            fetch('https://warren.pythonanywhere.com/api/etudiants/' + id, {
+            fetch(`https://warren.pythonanywhere.com/api/etudiants/${id}`, {
                 method: 'DELETE'
             })
                 .then((res) => {
@@ -46,6 +48,7 @@ const Afficheretudiant = () => {
                 });
         }
     };
+
     return (
         <MainCard>
             <div>

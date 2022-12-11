@@ -20,16 +20,17 @@ const GererPromotion = () => {
         fetchData();
     }, []);
     const fetchData = async () => {
-        fetch('https://warren.pythonanywhere.com/api/promotions/')
+        fetch('http://127.0.0.1:2000/promotion')
             .then((res) => res.json())
             .then((data) => setUsers(data))
             .catch((err) => {
                 console.log(err);
             });
     };
+
     const Supp = (id) => {
         if (window.confirm('voulez-vous supprimer?')) {
-            fetch('https://warren.pythonanywhere.com/api/promotions/' + id, {
+            fetch(`http://127.0.0.1:2000/promotion/${id}`, {
                 method: 'DELETE'
             })
                 .then((res) => {
@@ -41,10 +42,11 @@ const GererPromotion = () => {
                 });
         }
     };
+
     const [prom, promdatachange] = useState(null);
-    // const [etudata, etudatachange] = useState(null);
+
     useEffect(() => {
-        fetch('https://warren.pythonanywhere.com/api/promotions/')
+        fetch('http://127.0.0.1:2000/promotion')
             .then((res) => {
                 return res.json();
             })
@@ -55,20 +57,9 @@ const GererPromotion = () => {
                 console.log(err.message);
             });
     }, []);
-    useEffect(() => {
-        fetch('https://warren.pythonanywhere.com/api/promotions/')
-            .then((res) => {
-                return res.json();
-            })
-            .then((resp) => {
-                promdatachange(resp);
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
-    }, []);
+
     const onAdd = async (nom, description) => {
-        await fetch('https://warren.pythonanywhere.com/api/promotions/', {
+        await fetch('http://127.0.0.1:2000/promotion', {
             method: 'POST',
             body: JSON.stringify({
                 nom: nom,
@@ -92,27 +83,7 @@ const GererPromotion = () => {
                 console.log(err);
             });
     };
-    // const ondelete = async (id) => {
-    //     await fetch('http://localhost:2021/promotion/${id}', {
-    //         method: 'DELETE'
-    //     })
-    //         .then((res) => {
-    //             if (res.status !== 201) {
-    //                 return;
-    //             } else {
-    //                 setUsers(users.filter((user) => {
-    //                         return user.id !== id;
-    //                     })
-    //                 );
-    //             }
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // };
-    const handleOndelete = () => {
-        ondelete(id);
-    };
+
     const handleOnSubmit = (e) => {
         e.preventDefault();
         onAdd(e.target.nom.value, e.target.description.value);
@@ -155,7 +126,7 @@ const GererPromotion = () => {
                                             <td>{item.nom}</td>
                                             <td>{item.description}</td>
                                             <td>
-                                                <button onClick={handleOndelete} className="btn btn-success mr-2">
+                                                <button onClick={handleOnSubmit} className="btn btn-success mr-2">
                                                     Modifier
                                                 </button>
                                                 {/* <a onClick={() => Supp(item.id)} className="btn btn-success">

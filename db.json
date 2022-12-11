@@ -1,16 +1,6 @@
 {
   "etudiant": [
     {
-      "id": 3,
-      "matricule": "16kk184",
-      "nom": "kiyumbi",
-      "postnom": "kayumba",
-      "prenom": "chris",
-      "genre": "M",
-      "domicile": "kalubwe",
-      "email": "chriskk@gmail.com"
-    },
-    {
       "id": 4,
       "matricule": "16kk184",
       "nom": "chris",
@@ -18,7 +8,7 @@
       "prenom": "chris",
       "genre": "M",
       "domicile": "kalubwe",
-      "email": "chriskk@gmail.com
+      "email": "chriskk@gmail.com"
     },
     {
       "matricule": "445",
@@ -84,20 +74,6 @@
       "role": "",
       "password": "",
       "id": 9
-    },
-    {
-      "nom": "ben",
-      "post_nom": "ben",
-      "prenom": "ben",
-      "genre": "ben",
-      "adress": "Kasumbalesa",
-      "email": "christiankiyumbk@gmail.com",
-      "ate_naissance": "2022-12-16",
-      "lieu_naissance": "lubumbashi",
-      "login": "kkjkj",
-      "role": "kjkjkj",
-      "password": "kjkjkj",
-      "id": 10
     }
   ]
 }
