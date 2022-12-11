@@ -1,0 +1,39 @@
+{
+  "promotion": [
+    {
+      "id": 1,
+      "promotion": "L3",
+      "descroption": "promotion de L3"
+    },
+    {
+      "promotion": "prepa",
+      "description": "promotion prepa",
+      "id": 2
+    },
+    {
+      "promotion": "L1",
+      "description": "promotion l1",
+      "id": 3
+    },
+    {
+      "promotion": "L2",
+      "description": "kjkjkj",
+      "id": 4
+    },
+    {
+      "promotion": "kjkjkj",
+      "description": "",
+      "id": 5
+    },
+    {
+      "promotion": "gloire",
+      "description": "jhjhjh",
+      "id": 6
+    },
+    {
+      "promotion": "khkhk",
+      "description": "khkh",
+      "id": 7
+    }
+  ]
+}

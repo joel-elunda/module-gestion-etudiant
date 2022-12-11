@@ -21,7 +21,7 @@ import { useEffect, useState } from 'react';
 const Afficheretudiant = () => {
     const [etudata, etudatachange] = useState(null);
     useEffect(() => {
-        fetch('http://localhost:1000/etudiant')
+        fetch('https://warren.pythonanywhere.com/api/etudiants/')
             .then((res) => {
                 return res.json();
             })
@@ -34,7 +34,7 @@ const Afficheretudiant = () => {
     }, []);
     const Supp = (id) => {
         if (window.confirm('voulez-vous supprimer?')) {
-            fetch('http://localhost:1000/etudiant/' + id, {
+            fetch('https://warren.pythonanywhere.com/api/etudiants/' + id, {
                 method: 'DELETE'
             })
                 .then((res) => {
@@ -50,18 +50,17 @@ const Afficheretudiant = () => {
         <MainCard>
             <div>
                 <Form>
-                    <Table table table-striped>
+                    <Table table-striped table-dark>
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Matricule</th>
-                                <th>Nom</th>
-                                <th>Post-Nom</th>
-                                <th>Prenom</th>
-                                <th>Genre</th>
-                                <th>Domicile</th>
-                                <th>Email</th>
-                                <th>Action</th>
+                                <th scope="row">Id</th>
+                                <th scope="row">Nom</th>
+                                <th scope="row">Post-Nom</th>
+                                <th scope="row">Prenom</th>
+                                <th scope="row">Genre</th>
+                                <th scope="row">Adress</th>
+                                <th scope="row">Email</th>
+                                <th scope="row">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -71,13 +70,13 @@ const Afficheretudiant = () => {
                                         <td>{item.id}</td>
                                         <td>{item.matricule}</td>
                                         <td>{item.nom}</td>
-                                        <td>{item.postnom}</td>
+                                        <td>{item.post_nom}</td>
                                         <td>{item.prenom}</td>
                                         <td>{item.genre}</td>
-                                        <td>{item.domicile}</td>
+                                        <td>{item.adresse}</td>
                                         <td>{item.email}</td>
                                         <td>
-                                            <a className="btn btn-success mr-2">edit</a>
+                                            <a className="btn btn-success mr-2">Modifier</a>
                                             {/* <a onClick={() => Supp(item.id)} className="btn btn-success">
                                                 Supprimer
                                             </a> */}

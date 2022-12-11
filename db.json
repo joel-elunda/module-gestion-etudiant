@@ -18,21 +18,86 @@
       "prenom": "chris",
       "genre": "M",
       "domicile": "kalubwe",
-      "email": "chriskk@gmail.com"
-<<<<<<< HEAD
+      "email": "chriskk@gmail.com
     },
     {
+      "matricule": "445",
+      "nom": "gloire",
+      "postnom": "grace",
+      "prenom": "chris",
+      "genre": "M",
+      "promotion": "L3MSI",
       "id": 5
     },
     {
+      "nom": "klklk",
+      "postnom": "lklkk",
+      "prenom": "lk",
+      "genre": "lk",
+      "adress": "lk",
+      "email": "lklklk@gmail",
+      "datenaiss": "",
+      "lieunaiss": "",
+      "login": "",
+      "role": "",
+      "password": "",
       "id": 6
     },
     {
-      "name": "Jane Doe",
-      "email": "16ae001@esisalama.org",
+      "nom": "bkkkjIU",
+      "postnom": "i",
+      "prenom": "iuhiui",
+      "genre": "masculin",
+      "adress": "pop9p090p",
+      "email": "ilkkjkj",
+      "datenaiss": "",
+      "lieunaiss": "",
+      "login": "",
+      "role": "",
+      "password": "",
       "id": 7
-=======
->>>>>>> e14f353b30c9491164130efe5f7e1e3efb1f098e
+    },
+    {
+      "nom": "Mabilo",
+      "post_nom": "Mudibwa",
+      "prenom": "christian",
+      "genre": "masculin",
+      "adress": "Kasumbalesa",
+      "email": "dan@gmail.com",
+      "ate_naissance": "2022-12-23",
+      "lieu_naissance": "lubumbashi",
+      "login": "fvdvd",
+      "role": "llk",
+      "password": "lklklk",
+      "id": 8
+    },
+    {
+      "nom": "gloire",
+      "post_nom": "gloire",
+      "prenom": "gloire",
+      "genre": "masculin",
+      "adress": "lubumbashi",
+      "email": "agloire@gmail.com",
+      "ate_naissance": "2022-12-12",
+      "lieu_naissance": "lubumbashi",
+      "login": "",
+      "role": "",
+      "password": "",
+      "id": 9
+    },
+    {
+      "nom": "ben",
+      "post_nom": "ben",
+      "prenom": "ben",
+      "genre": "ben",
+      "adress": "Kasumbalesa",
+      "email": "christiankiyumbk@gmail.com",
+      "ate_naissance": "2022-12-16",
+      "lieu_naissance": "lubumbashi",
+      "login": "kkjkj",
+      "role": "kjkjkj",
+      "password": "kjkjkj",
+      "id": 10
     }
   ]
 }
