@@ -92,27 +92,27 @@ const Filiere = () => {
                 console.log(err);
             });
     };
-    // const ondelete = async (id) => {
-    //     await fetch('http://localhost:2021/promotion/${id}', {
-    //         method: 'DELETE'
-    //     })
-    //         .then((res) => {
-    //             if (res.status !== 201) {
-    //                 return;
-    //             } else {
-    //                 setUsers(users.filter((user) => {
-    //                         return user.id !== id;
-    //                     })
-    //                 );
-    //             }
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // };
-    // const handleOndelete = () => {
-    //     ondelete(id);
-    // };
+    const ondelete = async (id) => {
+        await fetch('http://localhost:2021/promotion/${id}', {
+            method: 'DELETE'
+        })
+            .then((res) => {
+                if (res.status !== 201) {
+                    return;
+                } else {
+                    setUsers(users.filter((user) => {
+                            return user.id !== id;
+                        })
+                    );
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+    const handleOndelete = () => {
+        ondelete(id);
+    };
     const handleOnSubmit = (e) => {
         e.preventDefault();
         onAdd(e.target.nom.value, e.target.description.value);
