@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-
+import { useEffect, useState } from 'react';
 // material-ui
 import {
     Button,
@@ -28,7 +28,9 @@ import AnimateButton from 'components/@extended/AnimateButton';
 
 // assets
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
-
+import { useRef } from 'react';
+import { get } from 'lodash';
+import Form from 'react-bootstrap/Form';
 // ============================|| FIREBASE - LOGIN ||============================ //
 
 const AuthLogin = () => {
@@ -43,11 +45,74 @@ const AuthLogin = () => {
         event.preventDefault();
     };
 
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        await fetch('http://127.0.0.1:1000/etudiant')
+            .then((res) => res.json())
+            .then((data) => setUsers(data))
+            .catch((err) => {
+                console.log(err.message);
+            });
+    };
+
+    const getUser = async (email) => {
+        await fetch(`http://127.0.0.1:1000/etudiant/${email}`, {
+            method: 'GET'
+        })
+            .then((res) => {
+                alert(res);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    };
+
+    const email = useRef();
+    const password = useRef();
+
+    const getEmail = localStorage.getItem('emailData');
+    const getPassword = localStorage.getItem('passwordData');
+
+    const handleOnLogin = (e) => {};
+
+    const handleOnLogout = () => {
+        localStorage.clear();
+        window.location.reload();
+    };
+
+    const handleSubmit = (event) => {
+        alert('"Damn..."');
+        e.preventDefault();
+        getUser(e.target.email.value);
+    };
+
     return (
         <>
-            <Formik
+            <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group>
+                <Button variant="primary" type="submit" color="primary">
+                    Submit
+                </Button>
+            </Form>
+            {/* <Formik
                 initialValues={{
-                    email: '22AB001',
+                    email: 'chriskk@gmail.com',
                     password: 'monmotdepasse',
                     submit: null
                 }}
@@ -67,19 +132,20 @@ const AuthLogin = () => {
                 }}
             >
                 {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
-                    <form noValidate onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
                                 <Stack spacing={1}>
-                                    <InputLabel htmlFor="email-login">Login</InputLabel>
+                                    <InputLabel htmlFor="email-login">Email</InputLabel>
                                     <OutlinedInput
                                         id="email-login"
                                         type="email"
                                         value={values.email}
                                         name="email"
+                                        ref={email}
                                         onBlur={handleBlur}
                                         onChange={handleChange}
-                                        placeholder="Enter email address"
+                                        placeholder="Entrez une adresse email"
                                         fullWidth
                                         error={Boolean(touched.email && errors.email)}
                                     />
@@ -100,6 +166,7 @@ const AuthLogin = () => {
                                         type={showPassword ? 'text' : 'password'}
                                         value={values.password}
                                         name="password"
+                                        ref={password}
                                         onBlur={handleBlur}
                                         onChange={handleChange}
                                         endAdornment={
@@ -156,6 +223,7 @@ const AuthLogin = () => {
                                         type="submit"
                                         variant="contained"
                                         color="primary"
+                                        onSubmit={handleSubmit}
                                     >
                                         Connexion
                                     </Button>
@@ -164,7 +232,7 @@ const AuthLogin = () => {
                         </Grid>
                     </form>
                 )}
-            </Formik>
+            </Formik> */}
         </>
     );
 };

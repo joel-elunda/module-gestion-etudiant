@@ -31,7 +31,7 @@ import Afficheretudiant from 'pages/etudiant/Afficheretudiant';
 
 const MainRoutes = {
     path: '/',
-    element: <MainLayout />,
+    element: <AuthLogin />,
     children: [
         {
             path: 'AuthLogin',
